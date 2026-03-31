@@ -4,7 +4,6 @@ import { signToken } from "../../utils/auth";
 
 const router = Router();
 
-// POST /api/users/register
 router.post("/register", async (req: Request, res: Response) => {
   try {
     const user = await User.create(req.body);
@@ -21,7 +20,6 @@ router.post("/register", async (req: Request, res: Response) => {
   }
 });
 
-// POST /api/users/login
 router.post("/login", async (req: Request, res: Response) => {
   try {
     const user = await User.findOne({ email: req.body.email });
